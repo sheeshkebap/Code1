@@ -1,6 +1,6 @@
 # Code 1
 
-First we download a few programm. These are the programms:
+First we downloaded a few programm. These are the programms:
 
 ## Git
 Git is a tool that helps people work together on writing code or other types of files. It keeps track of all the changes made to the files, so you can see who made what changes and when. It’s like a time machine for your work, letting you go back to earlier versions if needed.
