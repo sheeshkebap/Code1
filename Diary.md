@@ -26,4 +26,5 @@ Git Graph is a tool that shows a visual representation of your Git repository. I
 Today we built our first custom repository for ourselves to collect the notes about the course in a markdown page. We then did the same for our team. We put names, links to our profiles and pictures in our team page. We learnt that it is very annoying to work together in a markdown, because several people cann work on it, but only on person can save it, while the progress of the others has to be deleted.
 
 
-hello change!
+Hello change!
+Now we can clone and push repositorys local and via internet.
