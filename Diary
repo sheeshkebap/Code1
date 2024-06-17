@@ -1,0 +1,23 @@
+Code 1
+
+First we download a few programm. These are the programms:
+
+Git
+Git is a tool that helps people work together on writing code or other types of files. It keeps track of all the changes made to the files, so you can see who made what changes and when. It’s like a time machine for your work, letting you go back to earlier versions if needed.
+
+node.js
+Node.js is a platform that lets you run JavaScript code outside of a web browser. It’s based on Google’s V8 JavaScript engine and allows developers to build server-side applications using Java-Script. Node.js is popular for its speed, scalability, and the ability to create efficient network applications.
+
+TypeScript Compiler (tsc)
+TypeScript is a programming language that extends JavaScript by adding features like static typing. The TSC converts TypeScript code into JavaScript so it can be run by browser or Node.Js.
+
+Visual Studio Code (VSC)
+It’s a free, open-source code editor tool made by Microsoft, used for writing and editing code. VSC has lots of useful features like IntelliSense (automatic completion), debugging support, Git integration, and it can be extended with many plugins.
+
+Visual Studio Code Extensions
+
+ESLint
+ESLint is a tool that helps developers find and fix problems in their JavaScript code. It cecks your code for common errors, coding style issues, and potential bugs, helping to ensure consistence and maintainability across your codebase.
+
+Git Graph
+Git Graph is a tool that shows a visual representation of your Git repository. It helps you see the history of your commits, branches, and merges, making it easier to understand how your code has evolved and how different branches work together. 
