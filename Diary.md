@@ -28,10 +28,4 @@ Today we built our first custom repository for ourselves to collect the notes ab
 
 Hello change!
 Now we can clone and push repositorys local and via internet.
-
-#halloö
-
-The last Test
-
-
-# Test Ub
+Branch is quite difficult but I try!
