@@ -31,3 +31,12 @@ Now we can clone and push repositorys local and via internet.
 Branch is quite difficult but I try!
 So, now I get it: First you create a Branch and named it, then you publish the branch. The next is important: Whenever you change something in the branch, you have to save and commit the branch, otherwise you change also the main.
 
+## HTML
+
+**Syntax**
+How you write HTML tags correctly.
+
+**Semantics**
+What those tags mean and represent.
+
+Syntax is about writing rules, while sementics is about meaning.
