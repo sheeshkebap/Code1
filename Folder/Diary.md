@@ -40,3 +40,5 @@ How you write HTML tags correctly.
 What those tags mean and represent.
 
 Syntax is about writing rules, while sementics is about meaning.
+
+This text is only a test!
