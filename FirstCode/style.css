@@ -4,6 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content:center;
+    outline: 20px solid #eeff00;
 }
 p {
         color:aqua;
