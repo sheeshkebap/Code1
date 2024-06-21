@@ -8,7 +8,7 @@ switch(UserInput) {
         if(UserInput=="blau") {
             UserInput = prompt("Der Boden unter dir gibt nach! Willst du dich 'festhalten' oder einfach nur 'fallen'?")!;
                 if(UserInput=="festhalten") {
-                    UserInput = prompt("Du hälst dich an ein Roh fest, welches jedoch abbricht, weswegen du in die Tiefe fällst. Du landest in einem kalten See in einer riesigen Hölle. Du entdeckst einen Ausgang, der von einem Felsen versperrt ist. Möchtest du diesen mit dem Rohr 'entfernen', die Höhle 'erkunden' oder auf Hilfe 'warten'?")!;
+                    UserInput = prompt("Du hälst dich an ein Rohr fest, welches jedoch abbricht, weswegen du in die Tiefe fällst. Du landest in einem kalten See in einer riesigen Hölle. Du entdeckst einen Ausgang, der von einem Felsen versperrt ist. Möchtest du diesen mit dem Rohr 'entfernen', die Höhle 'erkunden' oder auf Hilfe 'warten'?")!;
                     switch(UserInput) {
                         case "entfernen":
                             alert("Du gelangst ins Freie und lebst ein langes, glückliches, aber sehr armes Leben.");
@@ -44,7 +44,7 @@ switch(UserInput) {
                      
                         UserInput = prompt("Der Boden unter dir gibt nach! Willst du dich 'festhalten' oder einfach nur 'fallen'?")!;
                             if(UserInput=="festhalten") {
-                                UserInput = prompt("Du hälst dich an ein Roh fest, welches jedoch abbricht, weswegen du in die Tiefe fällst. Du landest in einem kalten See in einer riesigen Hölle. Du entdeckst einen Ausgang, der von einem Felsen versperrt ist. Möchtest du diesen mit dem Rohr 'entfernen', die Höhle 'erkunden' oder auf Hilfe 'warten'?")!;
+                                UserInput = prompt("Du hälst dich an ein Rohr fest, welches jedoch abbricht, weswegen du in die Tiefe fällst. Du landest in einem kalten See in einer riesigen Hölle. Du entdeckst einen Ausgang, der von einem Felsen versperrt ist. Möchtest du diesen mit dem Rohr 'entfernen', die Höhle 'erkunden' oder auf Hilfe 'warten'?")!;
                                 switch(UserInput) {
                                     case "entfernen":
                                         alert("Du gelangst ins Freie und lebst ein langes, glückliches, aber sehr armes Leben.");
