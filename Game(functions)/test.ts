@@ -5,7 +5,7 @@ let UserInput: string;
 function roteTür():void {
     UserInput = prompt("Die Tür ist zu. Die Klinke bricht allerdings ab. Welche der beiden verbleibenden Türen willst du öffnen? 'blau' oder 'grün'")!;
         if(UserInput=="blau") {
-            alert("OK")
+            blaueTür()
         } else {
             alert("Die grüne Tür schleckt dich ab und du stirbst qualvoll!"); ersterRaum()
         }
@@ -16,7 +16,7 @@ function blaueTür():void{
         if(UserInput=="festhalten"){
             HöhleRohr()
         } else {
-
+            Höhle()
         }
 
 }
