@@ -28,7 +28,8 @@ function HöhleRohr():void{
             alert("Du gelangst ins Freie und lebst ein langes, glückliches, aber sehr armes Leben.");
             break;
         case "erkunden":
-            alert("Durch das Erkunden lernst du die Höhle besser kennen und kannst Sightseeing-Touren anbieten. Dadurch wirst du sehr reich und lebst zudem ein glückliches langes Leben!")
+            alert("Durch das Erkunden lernst du die Höhle besser kennen und kannst Sightseeing-Touren anbieten. Dadurch wirst du sehr reich und lebst zudem ein glückliches langes Leben!");
+            break;
         default:
             alert("Du verhungerst und träumst von einem guten Leben, dass an dir vorbei zieht."); ersterRaum();
             break;
