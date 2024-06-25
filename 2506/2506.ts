@@ -1,1 +1,2 @@
-let spanElement = document.getElementsByTagName("span")
+let spanElement = document.getElementsByTagName("span")[0];
+spanElement.textContent = "World";
