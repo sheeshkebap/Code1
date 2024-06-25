@@ -1,26 +1,3 @@
-let spanElement: HTMLSpanElement = document.querySelector("span#IDHello")!;
-spanElement.textContent = "World";
-
-let newSpan: HTMLSpanElement = document.createElement("span");
-newSpan.textContent = "Hello";
-document.body.appendChild(newSpan);
-newSpan.style.backgroundColor = "red";
-
-console.log(newSpan);
-
-let i: number = 0;
-
-do {
-    i++;
-    console.log(i);
-    let newSpan: HTMLSpanElement = document.createElement("span");
-    newSpan.textContent = " Hello";
-    document.body.appendChild(newSpan);
-    newSpan.style.backgroundColor = "red";
-} while (i < 10)
-
-let b: number = 10;
-
 document.body.style.backgroundColor = "lightblue";
 
 
@@ -48,23 +25,33 @@ function getRandomArrayElement<T>(arr: T[]): T {
     return arr[randomIndex];
 }
 
-function RandomDivs(): void {
-    let newDiv = document.createElement("div");
-    newDiv.style.display = "flex";
-    newDiv.style.backgroundColor = getRandomArrayElement(Color);
-    newDiv.style.width = randomInt;
-    newDiv.style.height = randomInt;
-    newDiv.style.marginLeft = randomInt;
-    newDiv.style.marginRight = randomInt;
-    newDiv.style.marginTop = randomInt;
-    newDiv.style.marginBottom = randomInt;
-    newDiv.style.border = "2px solid black";
-    document.body.appendChild(newDiv);
+
+function createRandomDivs(containerId: string): void {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error("Elemnt mit ID nicht gefunden");
+        return;
+    }
+
+    const numberOfDivs = Math.floor(Math.random() * 10) +1;
+
+    for (let i = 0; i < numberOfDivs; i++) {
+        const newDiv = document.createElement("div");
+        newDiv.style.display = "flex";
+        newDiv.style.backgroundColor = getRandomArrayElement(Color);
+        newDiv.style.width = randomInt;
+        newDiv.style.height = randomInt;
+        newDiv.style.marginLeft = randomInt;
+        newDiv.style.marginRight = randomInt;
+        newDiv.style.marginTop = randomInt;
+        newDiv.style.marginBottom = randomInt;
+        newDiv.style.border = "2px solid black";
+        container.appendChild(newDiv); 
+    }
+
 }
 
 
-do {
-    b++;
-    console.log(b);
-    RandomDivs();
-} while (i == 10 && b < 30)
+window.onload = () => {
+    createRandomDivs("container");
+}
