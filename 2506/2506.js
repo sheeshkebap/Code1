@@ -16,12 +16,18 @@ do {
     newSpan.style.backgroundColor = "red";
 } while (i < 10);
 let b = 10;
-let abs = document.createElement("br");
+document.body.style.backgroundColor = "lightblue";
+let newDiv = document.createElement("div");
+newDiv.style.backgroundColor = "black";
+newDiv.style.padding = "10px";
+newDiv.style.border = "2px solid black";
 do {
     b++;
     console.log(b);
-    abs;
+    let abs = document.createElement("br");
+    document.body.appendChild(abs);
     let secondSpan = document.createElement("span");
     secondSpan.textContent = "Bye";
     document.body.appendChild(secondSpan);
+    document.body.appendChild(newDiv);
 } while (i == 10 && b < 30);
