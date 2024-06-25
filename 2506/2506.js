@@ -1,3 +1,17 @@
 "use strict";
-let spanElement = document.getElementsByTagName("span")[0];
+let spanElement = document.querySelector("span#IDHello");
 spanElement.textContent = "World";
+let newSpan = document.createElement("span");
+newSpan.textContent = "Hello";
+document.body.appendChild(newSpan);
+newSpan.style.backgroundColor = "red";
+console.log(newSpan);
+let i = 0;
+do {
+    i++;
+    console.log(i);
+    let newSpan = document.createElement("span");
+    newSpan.textContent = "Hello";
+    document.body.appendChild(newSpan);
+    newSpan.style.backgroundColor = "red";
+} while (i < 10);
