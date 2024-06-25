@@ -1,0 +1,1 @@
+let spanElement = document.getElementsByTagName("span")
