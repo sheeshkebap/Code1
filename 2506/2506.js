@@ -11,14 +11,17 @@ do {
     i++;
     console.log(i);
     let newSpan = document.createElement("span");
-    newSpan.textContent = "Hello";
+    newSpan.textContent = " Hello";
     document.body.appendChild(newSpan);
     newSpan.style.backgroundColor = "red";
 } while (i < 10);
 let b = 10;
+let abs = document.createElement("br");
 do {
     b++;
     console.log(b);
+    abs;
     let secondSpan = document.createElement("span");
     secondSpan.textContent = "Bye";
-} while (i > 10 && b < 30);
+    document.body.appendChild(secondSpan);
+} while (i == 10 && b < 30);
