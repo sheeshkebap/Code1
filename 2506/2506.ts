@@ -23,18 +23,48 @@ let b: number = 10;
 
 document.body.style.backgroundColor = "lightblue";
 
-let newDiv = document.createElement("div");
-newDiv.style.backgroundColor = "black"
-newDiv.style.padding = "10px";
-newDiv.style.border = "2px solid black";
+
+let Color: string[] = [
+    "red",
+    "blue",
+    "yellow",
+    "pink",
+    "black",
+    "green",
+    "white",
+    "lightgreen"
+]
+
+function getRandomIntInclusive(min:number, max: number): number {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const randomInt = getRandomIntInclusive(1, 1000) + "px";
+
+function getRandomArrayElement<T>(arr: T[]): T {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex];
+}
+
+function RandomDivs(): void {
+    let newDiv = document.createElement("div");
+    newDiv.style.display = "flex";
+    newDiv.style.backgroundColor = getRandomArrayElement(Color);
+    newDiv.style.width = randomInt;
+    newDiv.style.height = randomInt;
+    newDiv.style.marginLeft = randomInt;
+    newDiv.style.marginRight = randomInt;
+    newDiv.style.marginTop = randomInt;
+    newDiv.style.marginBottom = randomInt;
+    newDiv.style.border = "2px solid black";
+    document.body.appendChild(newDiv);
+}
+
 
 do {
     b++;
     console.log(b);
-    let abs: HTMLBRElement = document.createElement("br");
-    document.body.appendChild(abs);
-    let secondSpan: HTMLSpanElement = document.createElement("span");
-    secondSpan.textContent = "Bye";
-    document.body.appendChild(secondSpan);
-    document.body.appendChild(newDiv);
+    RandomDivs();
 } while (i == 10 && b < 30)
