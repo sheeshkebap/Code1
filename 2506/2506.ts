@@ -18,3 +18,12 @@ do {
     document.body.appendChild(newSpan);
     newSpan.style.backgroundColor = "red";
 } while (i < 10)
+
+let b: number = 10;
+
+do {
+    b++;
+    console.log(b);
+    let secondSpan: HTMLSpanElement = document.createElement("span");
+    secondSpan.textContent = "Bye"
+} while (i > 10 && b < 30)
