@@ -25,7 +25,7 @@ function getRandomArrayElement<T>(arr: T[]): T {
 function createRandomElement(): HTMLElement {
     const element = document.createElement("div");
 
-    element.style.position = "absolut";
+    element.style.position = "absolute";
     element.style.width = `${getRandomIntInclusive(50, 100)}px`;
     element.style.height = `${getRandomIntInclusive(50, 100)}px`;
 

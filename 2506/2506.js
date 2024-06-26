@@ -21,7 +21,7 @@ function getRandomArrayElement(arr) {
 }
 function createRandomElement() {
     const element = document.createElement("div");
-    element.style.position = "absolut";
+    element.style.position = "absolute";
     element.style.width = `${getRandomIntInclusive(50, 100)}px`;
     element.style.height = `${getRandomIntInclusive(50, 100)}px`;
     element.style.top = `${getRandomIntInclusive(0, window.innerHeight - 100)}px`;
