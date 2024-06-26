@@ -1,6 +1,7 @@
 document.body.style.backgroundColor = "lightblue";
 
 
+
 let Color: string[] = [
     "red",
     "blue",
@@ -26,12 +27,11 @@ function getRandomArrayElement<T>(arr: T[]): T {
 }
 
 
-function createRandomDivs(containerId: string): void {
-    const container = document.getElementById(containerId);
-    if (!container) {
-        console.error("Elemnt mit ID nicht gefunden");
-        return;
-    }
+function createRandomDivs(): void {
+    const container = document.createElement("div");
+    container.style.height = "100px";
+    container.style.width = "100px";
+    document.body.appendChild(container);
 
     const numberOfDivs = Math.floor(Math.random() * 10) +1;
 
@@ -52,6 +52,4 @@ function createRandomDivs(containerId: string): void {
 }
 
 
-window.onload = () => {
-    createRandomDivs("container");
-}
+createRandomDivs();
