@@ -1,7 +1,5 @@
 document.body.style.backgroundColor = "lightblue";
 
-
-
 let Color: string[] = [
     "red",
     "blue",
@@ -13,7 +11,7 @@ let Color: string[] = [
     "lightgreen"
 ]
 
-function getRandomIntInclusive(min:number, max: number): number {
+function getRandomIntInclusive(min: number, max: number): number {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -24,31 +22,34 @@ function getRandomArrayElement<T>(arr: T[]): T {
     return arr[randomIndex];
 }
 
+function createRandomElement(): HTMLElement {
+    const element = document.createElement("div");
 
-function createRandomDivs(): void {
-    const container = document.createElement("div");
-    container.style.height = "100px";
-    container.style.width = "100px";
-    document.body.appendChild(container);
+    element.style.position = "absolut";
+    element.style.width = `${getRandomIntInclusive(50, 100)}px`;
+    element.style.height = `${getRandomIntInclusive(50, 100)}px`;
 
-    const numberOfDivs = Math.floor(Math.random() * 10) +1;
+    element.style.top = `${getRandomIntInclusive(0, window.innerHeight - 100)}px`;
+    element.style.left = `${getRandomIntInclusive(0, window.innerWidth - 100)}px`;
 
-    for (let i = 0; i < numberOfDivs; i++) {
-        const newDiv = document.createElement("div");
-        const randomInt = getRandomIntInclusive(1, 1000) + "px";
-        newDiv.style.display = "flex";
-        newDiv.style.backgroundColor = getRandomArrayElement(Color);
-        newDiv.style.width = randomInt;
-        newDiv.style.height = randomInt;
-        newDiv.style.marginLeft = randomInt;
-        newDiv.style.marginRight = randomInt;
-        newDiv.style.marginTop = randomInt;
-        newDiv.style.marginBottom = randomInt;
-        newDiv.style.border = "2px solid black";
-        container.appendChild(newDiv); 
-    }
+    element.style.backgroundColor = getRandomArrayElement(Color);
+    element.style.border = "2px solid black";
+    element.style.padding = "5px";
+    element.style.color = getRandomArrayElement(Color);
 
+    return element;
 }
 
+function createRandomÉlements(): void {
+    const numElements = getRandomIntInclusive(5, 1000);
 
-createRandomDivs();
+    for (let i = 0; i < numElements; i++) {
+        const randomElement = createRandomElement();
+        document.body.appendChild(randomElement);
+    }
+}
+
+window.onload = () => {
+    createRandomÉlements();
+}
+

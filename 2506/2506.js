@@ -19,25 +19,26 @@ function getRandomArrayElement(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
     return arr[randomIndex];
 }
-function createRandomDivs() {
-    const container = document.createElement("div");
-    container.style.height = "100px";
-    container.style.width = "100px";
-    document.body.appendChild(container);
-    const numberOfDivs = Math.floor(Math.random() * 10) + 1;
-    for (let i = 0; i < numberOfDivs; i++) {
-        const newDiv = document.createElement("div");
-        const randomInt = getRandomIntInclusive(1, 1000) + "px";
-        newDiv.style.display = "flex";
-        newDiv.style.backgroundColor = getRandomArrayElement(Color);
-        newDiv.style.width = randomInt;
-        newDiv.style.height = randomInt;
-        newDiv.style.marginLeft = randomInt;
-        newDiv.style.marginRight = randomInt;
-        newDiv.style.marginTop = randomInt;
-        newDiv.style.marginBottom = randomInt;
-        newDiv.style.border = "2px solid black";
-        container.appendChild(newDiv);
+function createRandomElement() {
+    const element = document.createElement("div");
+    element.style.position = "absolut";
+    element.style.width = `${getRandomIntInclusive(50, 100)}px`;
+    element.style.height = `${getRandomIntInclusive(50, 100)}px`;
+    element.style.top = `${getRandomIntInclusive(0, window.innerHeight - 100)}px`;
+    element.style.left = `${getRandomIntInclusive(0, window.innerWidth - 100)}px`;
+    element.style.backgroundColor = getRandomArrayElement(Color);
+    element.style.border = "2px solid black";
+    element.style.padding = "5px";
+    element.style.color = getRandomArrayElement(Color);
+    return element;
+}
+function createRandomÉlements() {
+    const numElements = getRandomIntInclusive(5, 1000);
+    for (let i = 0; i < numElements; i++) {
+        const randomElement = createRandomElement();
+        document.body.appendChild(randomElement);
     }
 }
-createRandomDivs();
+window.onload = () => {
+    createRandomÉlements();
+};
