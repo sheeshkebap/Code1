@@ -15,7 +15,6 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-const randomInt = getRandomIntInclusive(1, 1000) + "px";
 function getRandomArrayElement(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
     return arr[randomIndex];
@@ -28,6 +27,7 @@ function createRandomDivs() {
     const numberOfDivs = Math.floor(Math.random() * 10) + 1;
     for (let i = 0; i < numberOfDivs; i++) {
         const newDiv = document.createElement("div");
+        const randomInt = getRandomIntInclusive(1, 1000) + "px";
         newDiv.style.display = "flex";
         newDiv.style.backgroundColor = getRandomArrayElement(Color);
         newDiv.style.width = randomInt;
