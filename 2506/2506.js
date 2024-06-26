@@ -39,6 +39,14 @@ function createRandomÉlements() {
         document.body.appendChild(randomElement);
     }
 }
+document.body.addEventListener("click", hdnClick);
+function hdnClick(_event) {
+    let target = _event.target;
+    if (target == document.body)
+        return;
+    target.style.backgroundColor = getRandomArrayElement(Color);
+    console.log(_event.currentTarget);
+}
 window.onload = () => {
     createRandomÉlements();
 };

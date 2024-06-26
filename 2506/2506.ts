@@ -49,6 +49,16 @@ function createRandomÉlements(): void {
     }
 }
 
+document.body.addEventListener("click", hdnClick);
+
+function hdnClick(_event:Event): void {
+    let target: HTMLElement = <HTMLElement>_event.target;
+    if (target == document.body)
+        return;
+    target.style.backgroundColor = getRandomArrayElement(Color);
+    console.log(_event.currentTarget)
+}
+
 window.onload = () => {
     createRandomÉlements();
 }
