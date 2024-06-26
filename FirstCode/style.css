@@ -1,0 +1,25 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: blueviolet;
+    outline: 20px solid #eeff00;
+    margin-left: 16cm;
+    margin-right: 16cm;
+    margin-top: 3cm;
+
+    p {
+        color:aqua;
+        font-size: 15pt;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+h1 {
+    font-size: 30pt;
+    color: blue;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
