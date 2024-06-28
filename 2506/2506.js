@@ -1,5 +1,6 @@
 "use strict";
 document.body.style.backgroundColor = "lightblue";
+// possible colors
 let Color = [
     "red",
     "blue",
@@ -10,11 +11,27 @@ let Color = [
     "white",
     "lightgreen"
 ];
+let text = [
+    "Hi, there.",
+    "Yo",
+    "white",
+    "black",
+    "red dead",
+    "tsssssss"
+];
+let fontfamilie = [
+    "Times New Roman",
+    "Courier New",
+    "Arial",
+    "Papyrus"
+];
+// random Number
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+// random Element form a Array
 function getRandomArrayElement(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
     return arr[randomIndex];
@@ -30,6 +47,9 @@ function createRandomElement() {
     element.style.border = "2px solid black";
     element.style.padding = "5px";
     element.style.color = getRandomArrayElement(Color);
+    element.textContent = getRandomArrayElement(text);
+    element.style.fontFamily = getRandomArrayElement(fontfamilie);
+    element.style.fontSize = `${getRandomIntInclusive(5, 35)}px`;
     return element;
 }
 function createRandomÉlements() {
@@ -45,6 +65,17 @@ function hdnClick(_event) {
     if (target == document.body)
         return;
     target.style.backgroundColor = getRandomArrayElement(Color);
+    target.style.fontSize = "14px";
+    target.textContent = "smash!";
+    console.log(_event.currentTarget);
+}
+document.body.addEventListener("dblclick", dbClick);
+function dbClick(_event) {
+    let target2 = _event.target;
+    if (target2 == document.body)
+        return;
+    target2.style.top = `${getRandomIntInclusive(0, window.innerHeight - 100)}px`;
+    target2.style.top = `${getRandomIntInclusive(0, window.innerWidth - 100)}px`;
     console.log(_event.currentTarget);
 }
 window.onload = () => {
