@@ -19,8 +19,8 @@ function hdnClick(_event) {
         Color: getRandomColor(),
     });
     drawCircles();
-    requestAnimationFrame(animationFrame);
 }
+requestAnimationFrame(animationFrame);
 function drawCircles() {
     for (let cr = 0; cr < circles.length; cr++) {
         let pathCircle = new Path2D();
@@ -29,12 +29,11 @@ function drawCircles() {
         ctx.fill(pathCircle);
     }
 }
-const SpeedCircle = 0.1;
+const SpeedCircle = 0.5;
 function updateCircle() {
     for (let i = 0; i < circles.length; i++) {
-        circles[i].positionY += SpeedCircle;
-        if (circles[i].positionY > 800) {
-            circles[i].positionY = canvas.height;
+        if (circles[i].positionY < 800 - circles[i].radius) {
+            circles[i].positionY += SpeedCircle;
         }
     }
 }

@@ -29,8 +29,9 @@ function hdnClick(_event:MouseEvent): void {
         Color: getRandomColor(),
     })
     drawCircles();
-    requestAnimationFrame(animationFrame);
 }
+
+requestAnimationFrame(animationFrame);
 
 function drawCircles(): void{
     for(let cr: number = 0; cr < circles.length; cr++){
@@ -43,12 +44,11 @@ function drawCircles(): void{
 
 
 
-const SpeedCircle: number = 0.1
+const SpeedCircle: number = 0.5
 function updateCircle(){
     for(let i: number = 0; i < circles.length; i++){
-        circles[i].positionY += SpeedCircle;
-        if(circles[i].positionY > 800){
-            circles[i].positionY = canvas.height;
+        if(circles[i].positionY < 800 - circles[i].radius){
+            circles[i].positionY += SpeedCircle;
         }
     }
 }
