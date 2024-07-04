@@ -33,15 +33,14 @@ const SpeedCircle = 0.1;
 function updateCircle() {
     for (let i = 0; i < circles.length; i++) {
         circles[i].positionY += SpeedCircle;
-        if (circles[i].positionY < 800) {
+        if (circles[i].positionY > 800) {
             circles[i].positionY = canvas.height;
         }
     }
 }
 function animationFrame() {
-    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.putImageData(imgData, 0, 0);
     updateCircle();
+    drawCircles();
     requestAnimationFrame(animationFrame);
 }
