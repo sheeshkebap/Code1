@@ -9,17 +9,37 @@ function getRandomColor() {
     }
     return color;
 }
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 let circles = [];
+let boxes = [];
 canvas.addEventListener("click", hdnClick);
 function hdnClick(_event) {
-    circles.push({
-        positionX: _event.offsetX,
-        positionY: _event.offsetY,
-        radius: Math.random() * 100 + 20,
-        Color: getRandomColor(),
-        Speed: 0.5,
-    });
-    drawCircles();
+    let x = Math.floor(Math.random() * 2 + 1);
+    if (x == 2) {
+        circles.push({
+            positionX: _event.offsetX,
+            positionY: _event.offsetY,
+            radius: Math.random() * 100 + 20,
+            Color: getRandomColor(),
+            Speed: 0.5,
+        });
+        drawCircles();
+    }
+    else {
+        boxes.push({
+            positionX: _event.offsetX,
+            positionY: _event.offsetY,
+            boxWidth: getRandomIntInclusive(10, 100),
+            boxHeight: getRandomIntInclusive(10, 100),
+            Color: getRandomColor(),
+            Speed: 0.5,
+        });
+        drawBoxes();
+    }
 }
 requestAnimationFrame(animationFrame);
 function drawCircles() {
@@ -30,6 +50,14 @@ function drawCircles() {
         ctx.fill(pathCircle);
     }
 }
+function drawBoxes() {
+    for (let bo = 0; bo < boxes.length; bo++) {
+        let pathBox = new Path2D();
+        pathBox.rect(boxes[bo].positionX, boxes[bo].positionY, boxes[bo].boxWidth, boxes[bo].boxHeight);
+        ctx.fillStyle = boxes[bo].Color;
+        ctx.fill(pathBox);
+    }
+}
 function updateCircle() {
     for (let i = 0; i < circles.length; i++) {
         if (circles[i].positionY < 800 - circles[i].radius) {
@@ -38,9 +66,19 @@ function updateCircle() {
         }
     }
 }
+function updateBox() {
+    for (let i = 0; i < boxes.length; i++) {
+        if (boxes[i].positionY < 800 - boxes[i].boxHeight) {
+            boxes[i].Speed = boxes[i].Speed + 0.1;
+            boxes[i].positionY += boxes[i].Speed;
+        }
+    }
+}
 function animationFrame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     updateCircle();
     drawCircles();
+    updateBox();
+    drawBoxes();
     requestAnimationFrame(animationFrame);
 }
