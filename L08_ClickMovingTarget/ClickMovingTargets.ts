@@ -36,4 +36,14 @@ for(let i: number = 0; i < 12; i++){
         Color: getRandomColor(),
         Speed: getRandomIntInclusive(0.5, 3),
     })
+    drawBoxes();
+}
+
+function drawBoxes(): void {
+    for(let bo: number = 0; bo < boxes.length; bo++){
+        let pathBox = new Path2D();
+        pathBox.rect(boxes[bo].positionX, boxes[bo].positionY, boxes[bo].boxWidth, boxes[bo].boxHeight);
+        ctx.fillStyle = boxes[bo].Color;
+        ctx.fill(pathBox);
+    }
 }
