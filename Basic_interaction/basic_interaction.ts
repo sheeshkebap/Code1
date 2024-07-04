@@ -15,6 +15,7 @@ interface circleData {
     positionY: number;
     radius: number;
     Color: string;
+    Speed: number;
 }
 
 let circles: circleData[] = [];
@@ -27,6 +28,7 @@ function hdnClick(_event:MouseEvent): void {
         positionY: _event.offsetY,
         radius: Math.random() * 100 + 20,
         Color: getRandomColor(),
+        Speed: 0.5,
     })
     drawCircles();
 }
@@ -42,13 +44,11 @@ function drawCircles(): void{
     }
 }
 
-
-
-const SpeedCircle: number = 0.5
 function updateCircle(){
     for(let i: number = 0; i < circles.length; i++){
         if(circles[i].positionY < 800 - circles[i].radius){
-            circles[i].positionY += SpeedCircle;
+           circles[i].Speed = circles[i].Speed + 0.1;
+           circles[i].positionY += circles[i].Speed;
         }
     }
 }

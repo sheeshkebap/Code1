@@ -17,6 +17,7 @@ function hdnClick(_event) {
         positionY: _event.offsetY,
         radius: Math.random() * 100 + 20,
         Color: getRandomColor(),
+        Speed: 0.5,
     });
     drawCircles();
 }
@@ -29,11 +30,11 @@ function drawCircles() {
         ctx.fill(pathCircle);
     }
 }
-const SpeedCircle = 0.5;
 function updateCircle() {
     for (let i = 0; i < circles.length; i++) {
         if (circles[i].positionY < 800 - circles[i].radius) {
-            circles[i].positionY += SpeedCircle;
+            circles[i].Speed = circles[i].Speed + 0.1;
+            circles[i].positionY += circles[i].Speed;
         }
     }
 }
