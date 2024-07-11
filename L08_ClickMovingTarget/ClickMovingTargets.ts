@@ -23,20 +23,24 @@ interface boxData{
     boxHeight: number;
     Color: string;
     Speed: number;
+    path: Path2D;
 }
 
 let boxes: boxData[] = [];
 
-for(let i: number = 0; i < 12; i++){
-    boxes.push({
-        positionX: getRandomIntInclusive(10, 1400),
-        positionY: getRandomIntInclusive(10, 700),
-        boxWidth: getRandomIntInclusive(20, 50),
-        boxHeight: getRandomIntInclusive(20, 50),
-        Color: getRandomColor(),
-        Speed: getRandomIntInclusive(0.5, 3),
-    })
-    drawBoxes();
+function generateBoxes(): void {
+    for(let i: number = 0; i < 12; i++){
+        boxes.push({
+            positionX: getRandomIntInclusive(10, 1400),
+            positionY: getRandomIntInclusive(10, 700),
+            boxWidth: getRandomIntInclusive(20, 50),
+            boxHeight: getRandomIntInclusive(20, 50),
+            Color: getRandomColor(),
+            Speed: getRandomIntInclusive(0.5, 3),
+            path: new Path2D(),
+        })
+        drawBoxes();
+    }
 }
 
 function drawBoxes(): void {
@@ -47,3 +51,41 @@ function drawBoxes(): void {
         ctx.fill(pathBox);
     }
 }
+
+function updateBoxes(): void {
+    for(let j: number = 0; j < 12; j++){
+        if(boxes[j].positionX < canvas.width){
+            boxes[j].positionX = boxes[j].positionX + 5;
+        }else{
+            boxes[j].positionX = 0
+        }
+    }
+}
+
+function clickBoxes(_event:MouseEvent): void{
+    let x: number = _event.offsetX;
+    let y: number = _event.offsetY;
+
+    for(let i = 0; i < boxes.length; i++){
+        let box: boxData = boxes[i];
+        if(ctx.isPointInPath(box.path, x, y)){
+            boxes[i].Color = "white";
+        }
+    }
+}
+
+
+
+
+function animationFrame(): void{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    updateBoxes();
+    drawBoxes()
+
+    requestAnimationFrame(animationFrame);
+}
+
+generateBoxes()
+canvas.addEventListener("click", clickBoxes);
+console.log(boxes);
+requestAnimationFrame(animationFrame);
