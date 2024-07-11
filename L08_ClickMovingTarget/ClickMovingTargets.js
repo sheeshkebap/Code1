@@ -23,7 +23,7 @@ function generateBoxes() {
             boxWidth: getRandomIntInclusive(20, 50),
             boxHeight: getRandomIntInclusive(20, 50),
             Color: getRandomColor(),
-            Speed: getRandomIntInclusive(0.5, 3),
+            Speed: getRandomIntInclusive(0.5, 5),
             path: new Path2D(),
         });
         drawBoxes();
@@ -35,12 +35,13 @@ function drawBoxes() {
         pathBox.rect(boxes[bo].positionX, boxes[bo].positionY, boxes[bo].boxWidth, boxes[bo].boxHeight);
         ctx.fillStyle = boxes[bo].Color;
         ctx.fill(pathBox);
+        boxes[bo].path = pathBox;
     }
 }
 function updateBoxes() {
     for (let j = 0; j < 12; j++) {
         if (boxes[j].positionX < canvas.width) {
-            boxes[j].positionX = boxes[j].positionX + 5;
+            boxes[j].positionX = boxes[j].positionX + boxes[j].Speed;
         }
         else {
             boxes[j].positionX = 0;
@@ -54,6 +55,8 @@ function clickBoxes(_event) {
         let box = boxes[i];
         if (ctx.isPointInPath(box.path, x, y)) {
             boxes[i].Color = "white";
+            console.log("hit");
+            return;
         }
     }
 }
